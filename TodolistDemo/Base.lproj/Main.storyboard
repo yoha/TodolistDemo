@@ -41,11 +41,60 @@
                             <outlet property="delegate" destination="z7U-3e-VEo" id="9uk-dB-DpE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aam-7R-Gxw"/>
+                    <navigationItem key="navigationItem" id="aam-7R-Gxw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BtW-eA-JJX">
+                            <connections>
+                                <segue destination="DjR-BU-Ahx" kind="show" id="0JR-Tr-THc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLS-bu-Wgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.8" y="106.59670164917542"/>
+        </scene>
+        <!--Add Note View Controller-->
+        <scene sceneID="yMl-Oa-5BW">
+            <objects>
+                <viewController id="DjR-BU-Ahx" customClass="AddNoteViewController" customModule="TodolistDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K1I-38-8O2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8fW-WI-hl5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yMe-ND-HPf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0u-C2-rbx">
+                                <frame key="frameInset" minX="16" minY="318" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PHj-PZ-Q8T">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vZ0-Yw-rMV">
+                            <connections>
+                                <action selector="cancelButtonDidTouchWithSender:" destination="DjR-BU-Ahx" id="dOf-4l-aiR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="56h-JD-9AG">
+                            <connections>
+                                <segue destination="h72-KS-Lq8" kind="unwind" unwindAction="unwindToTodolistTableViewControllerWithSender:" id="h8Y-vO-IB1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNoteTextField" destination="w0u-C2-rbx" id="T2O-Ja-D5Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAh-24-78l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="h72-KS-Lq8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1874.4000000000001" y="106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G8t-yt-xfq">
